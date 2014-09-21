@@ -1,8 +1,8 @@
-[![browser support](https://ci.testling.com/mattdesl/select-box.png)](https://ci.testling.com/mattdesl/select-box)
-
 # select-box
 
 [![unstable](http://badges.github.io/stability-badges/dist/unstable.svg)](http://github.com/badges/stability-badges)
+
+![img](http://i.imgur.com/7YBi58U.jpg)
 
 A minimal DOM `<select>` utility. Pull requests / suggestions welcome.
 
