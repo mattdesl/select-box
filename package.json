@@ -1,0 +1,55 @@
+{
+  "name": "select-box",
+  "version": "1.0.0",
+  "description": "a minimal DOM select box utility",
+  "main": "index.js",
+  "license": "MIT",
+  "author": "Matt DesLauriers <dave.des@gmail.com>",
+  "dependencies": {
+    "dom-events": "^0.1.1",
+    "events": "^1.0.2",
+    "inherits": "^2.0.1"
+  },
+  "devDependencies": {
+    "domready": "^1.0.7",
+    "eases": "^1.0.2",
+    "tape": "~2.13.2"
+  },
+  "scripts": {
+    "test": "node test.js"
+  },
+  "testling": {
+    "files": "test.js",
+    "browsers": [
+      "ie/6..latest",
+      "chrome/22..latest",
+      "firefox/16..latest",
+      "safari/latest",
+      "opera/11.0..latest",
+      "iphone/6",
+      "ipad/6",
+      "android-browser/latest"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mattdesl/select-box.git"
+  },
+  "homepage": "https://github.com/mattdesl/select-box",
+  "bugs": {
+    "url": "https://github.com/mattdesl/select-box/issues"
+  },
+  "keywords": [
+    "select",
+    "box",
+    "selectbox",
+    "combo",
+    "combobox",
+    "dom",
+    "drop",
+    "dropdown",
+    "down",
+    "menu",
+    "list"
+  ]
+}
