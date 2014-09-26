@@ -32,6 +32,10 @@ See [demo](demo/) for a complete example.
 
 Creates a new select box with the optional items to add.
 
+#### `box.element`
+
+The DOM element for this `<select>` box.
+
 #### `box.add(items)`
 
 Adds a single item or an array of items to this select box. An "item" is just a string (which indicates value and name), or an object:
@@ -70,7 +74,8 @@ The internal data which was passed to `add`, `set` or a constructor. This should
 
 #### `box.on('change')`
 
-Receives the `onchange` DOM event. 
+Receives the `onchange` DOM event.
+
 
 ## License
 
