@@ -5,7 +5,7 @@ function getData() {
 	//get some data
 	var names = Object.keys(eases)
 	names = names.filter(function(e) {
-		return 'linear'
+		return e !== 'linear'
 	})
 	//a little separator, not selectable
 	names.unshift({ disabled: true, name: '—' })
