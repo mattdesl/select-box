@@ -44,7 +44,8 @@ Select.prototype.clear = function() {
 
 Select.prototype.set = function(data) {
 	this.clear()
-	this.add(data)
+	this.add(data);
+	return this;
 }
 
 Select.prototype.add = function(data) {
@@ -77,6 +78,7 @@ Select.prototype.add = function(data) {
 		this.data.push(settings)
 	    this.element.appendChild(opt);	
 	}.bind(this))
+	return this;
 } 
 
 module.exports = Select
