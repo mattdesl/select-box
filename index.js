@@ -26,6 +26,7 @@ Select.prototype.select = function(value) {
 		else
 			f.element.removeAttribute('selected')
 	})
+	return this;
 }
 
 Select.prototype.selected = function() {
@@ -40,6 +41,7 @@ Select.prototype.clear = function() {
 	this.data.length = 0
 	while (this.element.firstChild) 
 	    this.element.removeChild(this.element.firstChild);	
+	return this;
 }
 
 Select.prototype.set = function(data) {
@@ -50,7 +52,7 @@ Select.prototype.set = function(data) {
 
 Select.prototype.add = function(data) {
 	this.data.length = 0
-	if (!Array.isArray(data) && typeof data == 'string')
+	if (!Array.isArray(data) && typeof data === 'string')
 		data = [data]
 	if(!(data instanceof Array)) {
 		var tmpdata = [];

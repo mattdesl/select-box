@@ -32,6 +32,26 @@ See [demo](demo/) for a complete example.
 
 Creates a new select box with the optional items to add.
 
+`items` can be a string, or an array of strings.
+
+Or, it can be a key-value pair like so:
+
+```js
+var box = SelectBox({
+    hello: 'Hello!',
+    goodbye: 'Goodbye!'
+});
+```
+
+Now logging `console.log(box.element.outerHTML)` results in:
+
+```html
+<select>
+    <option value="hello">Hello!</option>
+    <option value="goodbye">Goodbye!</option>
+</select>
+```
+
 #### `box.element`
 
 The DOM element for this `<select>` box.
@@ -48,13 +68,15 @@ Adds a single item or an array of items to this select box. An "item" is just a 
 }
 ```
 
+Returns `this` for chaining.
+
 #### `box.clear()`
 
-Clears the data in the box.
+Clears the data in the box. Returns `this` for chaining.
 
 #### `box.set(data)`
 
-Clears the current data in the box and adds the specified data.
+Clears the current data in the box and adds the specified data. Returns `this` for chaining.
 
 #### `box.selected()`
 
@@ -68,6 +90,8 @@ Same as `selected()`, but returns the index of the entry in the `data` list.
 
 Selects the item by `value` in this combo box, if it exists. 
 
+Returns `this` for chaining.
+
 #### `box.data`
 
 The internal data which was passed to `add`, `set` or a constructor. This should not be modified externally, although it could be used to retrieve values and names of each entry. 
@@ -75,7 +99,6 @@ The internal data which was passed to `add`, `set` or a constructor. This should
 #### `box.on('change')`
 
 Receives the `onchange` DOM event.
-
 
 ## License
 
