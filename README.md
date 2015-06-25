@@ -74,6 +74,11 @@ Returns `this` for chaining.
 
 Clears the data in the box. Returns `this` for chaining.
 
+
+#### `box.attr(attr, value)`
+
+Returns the specified attribute, if a value is specified, sets the attribute value and returns `this` for chaining.
+
 #### `box.set(data)`
 
 Clears the current data in the box and adds the specified data. Returns `this` for chaining.
