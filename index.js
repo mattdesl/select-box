@@ -44,6 +44,12 @@ Select.prototype.clear = function() {
 	return this;
 }
 
+Select.prototype.attr = function(attr, value) {
+	if(!value) return this.element.getAttribute(attr);
+	else this.element.setAttribute(attr, value);
+	return this;
+}
+
 Select.prototype.set = function(data) {
 	this.clear()
 	this.add(data);
