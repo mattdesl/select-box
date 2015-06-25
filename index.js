@@ -7,7 +7,7 @@ function Select(opt) {
 		return new Select(opt)
 	EventEmitter.call(this)
 	opt = opt||{}
-	if (Array.isArray(opt))
+	if (Array.isArray(opt) || typeof opt == 'string')
 		opt = { data: opt }
 	this.element = opt.element || document.createElement("select")
 	this.data = []
