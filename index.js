@@ -49,8 +49,19 @@ Select.prototype.set = function(data) {
 
 Select.prototype.add = function(data) {
 	this.data.length = 0
-	if (!Array.isArray(data))
+	if (!Array.isArray(data) && typeof data == 'string')
 		data = [data]
+	if(!(data instanceof Array)) {
+		var tmpdata = [];
+		for(var key in data){
+			if(!data.hasOwnProperty(key)) continue;
+			tmpdata.push({
+				name: data[key],
+				value: key
+			})
+		}
+		data = tmpdata;
+	}
 	data.forEach(function(f) {
 		var opt = document.createElement('option');
 		var settings = f
