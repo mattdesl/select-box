@@ -26,6 +26,7 @@ Select.prototype.select = function(value) {
 		else
 			f.element.removeAttribute('selected')
 	})
+	return this;
 }
 
 Select.prototype.selected = function() {
@@ -40,17 +41,36 @@ Select.prototype.clear = function() {
 	this.data.length = 0
 	while (this.element.firstChild) 
 	    this.element.removeChild(this.element.firstChild);	
+	return this;
+}
+
+Select.prototype.attr = function(attr, value) {
+	if(!value) return this.element.getAttribute(attr);
+	else this.element.setAttribute(attr, value);
+	return this;
 }
 
 Select.prototype.set = function(data) {
 	this.clear()
-	this.add(data)
+	this.add(data);
+	return this;
 }
 
 Select.prototype.add = function(data) {
 	this.data.length = 0
-	if (!Array.isArray(data))
+	if (!Array.isArray(data) && typeof data === 'string')
 		data = [data]
+	if(!(data instanceof Array)) {
+		var tmpdata = [];
+		for(var key in data){
+			if(!data.hasOwnProperty(key)) continue;
+			tmpdata.push({
+				name: data[key],
+				value: key
+			})
+		}
+		data = tmpdata;
+	}
 	data.forEach(function(f) {
 		var opt = document.createElement('option');
 		var settings = f
@@ -77,6 +97,7 @@ Select.prototype.add = function(data) {
 		this.data.push(settings)
 	    this.element.appendChild(opt);	
 	}.bind(this))
+	return this;
 } 
 
 module.exports = Select
