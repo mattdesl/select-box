@@ -45,7 +45,7 @@ Select.prototype.clear = function() {
 }
 
 Select.prototype.attr = function(attr, value) {
-	if(!value) return this.element.getAttribute(attr);
+	if(typeof value == 'undefined') return this.element.getAttribute(attr);
 	else this.element.setAttribute(attr, value);
 	return this;
 }
